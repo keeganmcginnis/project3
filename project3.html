@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <script type="text/javascript" id="calculateAge">
+    var calculateAge = function(){
+       var birthDate = document.getElementById('birth-date').value;
+       var currentTimeInSeconds = new Date().getTime();
+       var birthTimeInSeconds =  new Date(birthDate).getTime();  
+       var numberOfSecondsInAYear = (60 * 60 * 24 * 365);
+       var age = ((currentTimeInSeconds - birthTimeInSeconds)/1000) / numberOfSecondsInAYear;
+
+       document.getElementById('age-result').innerHTML = Math.floor(age);
+
+      }
+  </script>
+
+
+</head>
+<body>
+<br>
+<br>
+<br>
+<input id="birth-date" type="text" value="02/16/1996" placeholder="Enter DoB mm/dd/yyyy">
+<input type="submit" value="submit" class="submit-btn" onclick="calculateAge()">
+
+  <div id="age-result">
+
+  </div>
+
+</body>
+</html>
